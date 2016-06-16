@@ -1,2 +1,2 @@
 # Java Script Fundamentals
-Java Script Fundamentals 2016
+Java Script Fundamentals Homeworks
