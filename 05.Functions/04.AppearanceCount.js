@@ -1,11 +1,8 @@
 function solve(args) {
-    var lines = args[0].split('\n'),
-        n = lines[0],
-        secondRow = lines[1];
-        numbers = lines[1].split(' '),
-        searched = lines[2];
+    var numbers = args[1].split(' ').map(Number),
+        searched = parseInt(args[2]);
 
-    console.log(countNumber(searched));
+    return(countNumber(numbers, searched));
 
     function countNumber(arr, number) {
         var i,
@@ -13,7 +10,7 @@ function solve(args) {
             arrLength = arr.length;
 
         for (i = 0; i < arrLength; i += 1) {
-            if (arr[i] === number) {
+            if (arr[i] == number) {
                 counter += 1;
             }
         }
