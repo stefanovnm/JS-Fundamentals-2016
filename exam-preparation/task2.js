@@ -34,6 +34,7 @@ function solve(args) {
             deltaC = from.c > to.c ? -1 : 1;
 
         while((from.r !== to.r) || (from.c !== to.c) ){
+            
             from.r += deltaR;
             from.c += deltaC;
 
@@ -67,6 +68,8 @@ function solve(args) {
         while((from.r !== to.r) || (from.c !== to.c) ){
             from.r += deltaR;
             from.c += deltaC;
+            console.log(from.r+"-"+from.c+ " --> " + to.r +"-"+ to.c );
+            console.log(from.r + " " + from.c + "-" + board[from.r][from.c]);
 
             if(board[from.r][from.c] !== '-'){
                 return false;
@@ -76,7 +79,7 @@ function solve(args) {
         return true;
     }
 
-    function canMoveQeen(from, to) {
+    function canMoveQueen(from, to) {
         return canMoveBishop(from, to) || canMoveRook(from,to);
     }
     
@@ -91,7 +94,7 @@ function solve(args) {
             let canMove = canMoveBishop(move.from, move.to);
             console.log(canMove ? "yes" : "no");
         } else if(piece === 'Q'){
-            let canMove = canMoveQeen(move.from, move.to);
+            let canMove = canMoveQueen(move.from, move.to);
             console.log(canMove ? "yes" : "no");
         }else {
             console.log('no');
@@ -105,7 +108,7 @@ solve([
     '4',
     '--R-',
     'B--B',
-    'Q--Q',
+    'R--R',
     '12',
     'd1 b3',
     'a1 a3',
